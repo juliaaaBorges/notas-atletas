@@ -16,3 +16,16 @@ let atletas = [
    notas: [10, 10, 10, 9, 9.5]
  }
 ];
+
+function obterMedia(atletas){
+    atletas = atletas.notas.sort()
+    let notasComputadas = atletas.notas.slice(atletas.notas[0], atletas.notas[atletas.notas.length - 1])
+    let total = 0 
+    notasComputadas.forEach(function(notaComputada){
+         total = notaComputada + total
+    })
+    let media = total / notasComputadas.length
+    return media
+}
+  
+console.log(`${atletas.nome}, ${media}`)
